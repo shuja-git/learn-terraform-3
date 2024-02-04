@@ -12,14 +12,16 @@ data "aws_ami" "ami" {
   name_regex  = "Centos-8-DevOps-Practice"
   owners      = ["973714476881"]
 }
-
-resource "aws_vpc" "my-vpc" {
-  cidr_block = "10.0.0.0/24"
+variable "vpc_id" {
+  default = "vpc-0f5ff0779a753291f"
 }
 
+data "aws_vpc" "default-vpc-id" {
+  id = var.vpc_id
+}
 resource "aws_security_group" "my-sg" {
   name   = "my-sg"
-  vpc_id = aws_vpc.my-vpc.id
+  vpc_id = data.aws_vpc.default-vpc-id.id
 
   egress {
     from_port        = 0
@@ -47,3 +49,5 @@ resource "aws_route53_record" "my-dns-record" {
   ttl     = 300
   records = [aws_instance.my-test-Instance.public_ip]
 }
+
+
