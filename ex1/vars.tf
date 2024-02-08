@@ -1,3 +1,3 @@
 variable "vpc_id" {
-  default = "vpc-0f5ff0779a753291f"
+  default = "vpc-0d777bc0eeb02d730"
 }
