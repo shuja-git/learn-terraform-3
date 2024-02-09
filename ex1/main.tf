@@ -31,14 +31,14 @@ resource "aws_security_group" "my-sg" {
 
 resource "aws_route53_record" "frontend-record" {
   zone_id = data.aws_route53_zone.My-Zone.zone_id
-  name    = "frontend-dev.shujadevops.online"
+  name    = "frontend-dev.shujathdevops.online"
   type    = "A"
   ttl     = 300
   records = [aws_instance.frontend.public_ip]
 }
 resource "aws_route53_record" "cart-record" {
   zone_id = data.aws_route53_zone.My-Zone.zone_id
-  name    = "cart-dev.shujadevops.online"
+  name    = "cart-dev.shujathdevops.online"
   type    = "A"
   ttl     = 300
   records = [aws_instance.cart.public_ip]

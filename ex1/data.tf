@@ -9,6 +9,6 @@ data "aws_vpc" "default-vpc-id" {
 }
 
 data "aws_route53_zone" "My-Zone" {
-  name         = "shujadevops.online"
+  name         = "shujathdevops.online"
 }
 
