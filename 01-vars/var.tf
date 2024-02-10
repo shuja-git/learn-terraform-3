@@ -33,6 +33,22 @@ variable "d3" {
     }
   }
 }
-resource "null_resource" "nothing" {
-  for_each = var.d3
+#resource "null_resource" "nothing" {
+#  for_each = var.d3
+#}
+variable "names" {
+  default = ["cart","user"]
+}
+variable "types" {
+  default = ["t2.micro","t3.micro"]
+}
+
+resource "aws_instance" "cart" {
+  count         = length(length(var.names))
+  ami           = "ami-0f3c7d07486cad139"
+  instance_type = var.types[count.index]
+  vpc_security_group_ids = ["sg-08f41a3b66746e56a"]
+  tags = {
+    Name = var.names[count.index]
+  }
 }
