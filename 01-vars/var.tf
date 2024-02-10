@@ -89,7 +89,7 @@ resource "aws_instance" "instance" {
 }
 
 output "ec2" {
-  value = aws_instance.instance["payment"].public_ip
+  value = [for k,v in aws_instance.instance: v.public_ip]
 }
 
 
