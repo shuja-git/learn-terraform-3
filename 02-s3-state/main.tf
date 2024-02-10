@@ -11,6 +11,9 @@ resource "aws_instance" "instance" {
   ami           = "ami-0f3c7d07486cad139"
   instance_type = "t2.micro"
   vpc_security_group_ids = ["sg-08f41a3b66746e56a"]
+  tags = {
+    Name = var.instances[count.index]
+  }
 }
 
 variable "instances" {
