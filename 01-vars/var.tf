@@ -9,3 +9,15 @@ variable "sample_list" {
     true
   ]
 }
+variable "list_of_map" {
+  default = [
+    {
+      course_name = "aws"
+      trainer_name = "Shuja"
+    },
+    {
+      course_name = "devops"
+      trainer_name = "Luqman"
+    }
+  ]
+}
