@@ -88,6 +88,9 @@ resource "aws_instance" "instance" {
   }
 }
 
+output "ec2" {
+  value = aws_instance.instance
+}
 
 
 
