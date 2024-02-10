@@ -69,7 +69,7 @@ variable "d3" {
 variable "instances" {
   default = {
     shipping = {
-      name = "catalogue"
+      name = "shipping"
       type = "t2.micro"
     }
     payment = {
