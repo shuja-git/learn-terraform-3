@@ -6,7 +6,7 @@ terraform {
   }
 }
 
-resource "aws_instance" "cart" {
+resource "aws_instance" "instance" {
   count =        length(var.instances)
   ami           = "ami-0f3c7d07486cad139"
   instance_type = "t2.micro"
@@ -15,4 +15,8 @@ resource "aws_instance" "cart" {
 
 variable "instances" {
   default = ["cart","catalogue","shipping","payment","user"  ]
+}
+
+output "public_ips" {
+  value = aws_instance.instance.public_ip
 }
