@@ -4,5 +4,6 @@ resource "aws_route53_record" "record" {
   type    = "A"
   ttl     = 300
   records = [aws_instance.instance.public_ip]
+
 }
 
