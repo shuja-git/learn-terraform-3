@@ -11,6 +11,6 @@ variable "test" {
 }
 
 output "private_ip" {
-  value =  lookup(var.test, "cart", default)
+  value =  lookup(var.test, "cart")
 
 }
