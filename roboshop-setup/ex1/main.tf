@@ -12,3 +12,6 @@ module "sg" {
   source = "./sg"
 }
 
+output "ec2" {
+  value = module.ec2
+}
