@@ -11,6 +11,6 @@ variable "test" {
 }
 
 output "private_ip" {
-  value =  lookup(var.test, "cart")
+  value =  lookup(var.test["private_ip"], "cart")
 
 }
