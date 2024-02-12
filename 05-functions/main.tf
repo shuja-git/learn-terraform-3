@@ -1,4 +1,4 @@
-variable "test" {
+variable "private_ip" {
   default = {
     cart      = {
        private_ip = "1.1.1.1"
@@ -8,4 +8,8 @@ variable "test" {
 }
 
 }
+}
+
+output "test" {
+  value = var.private_ip
 }
