@@ -4,18 +4,11 @@ module "ec2" {
   source = "./ec2"
   component = each.value["name"]
   instance_type = each.value["type"]
+  sg_id         = module.sg.sg_id
 }
 
 
-variable "instances" {
-  default = {
-    cart = {
-      name = "cart"
-      type = "t2.micro"
-    }
-    catalogue = {
-      name = "catalogue"
-      type = "t2.micro"
-    }
-  }
+module "sg" {
+  source = "./sg"
 }
+
